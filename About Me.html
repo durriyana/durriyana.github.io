@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <style>
+    a:link {
+      color: #F0F8FF;
+      font-weight: bold;
+      border-radius: 100px;
+      text-align: center;
+    }
+
+    a:active {
+      color: rgb(107, 17, 243);
+      background-color: #fdcfb3;
+    }
+
+    /* Styling the menu */
+    .menu {
+      width: 100%;
+      margin: auto;
+      padding: 30px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .menu ul li {
+      list-style: none;
+      display: inline-block;
+      font-size: 18px;
+      padding: 9px;
+      letter-spacing: 2px;
+      background-color: #b16d8eb5;
+      font-weight: bolder;
+      margin-right: 8px;
+    }
+
+    .menu ul li a {
+      text-decoration: none;
+      color: #faf6f6;
+      text-transform: uppercase;
+    }
+
+    .menu ul li::after {
+      content: none;
+      height: 3px;
+      width: 100%;
+      background: #88185b;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    .menu ul li:hover {
+      background-color: #641132;
+      transition: 0.5s;
+    }
+
+    .menu ul li:active {
+      color: rgb(69, 4, 159);
+    }
+
+    body {
+      width: 100%;
+      height: 80vh;
+      background-image: url(WallpaperGradient.jpg);
+      background-position: center;
+    }
+
+    .biodata {
+      letter-spacing: 1px;
+      line-height: 40px;
+      font-size: 22px;
+      margin-top: 20px;
+      text-align: justify;
+    }
+
+    /* Adjusting the width and position of polaroid */
+    .wrapper {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Style the polaroid */
+    .polaroid {
+      background: #f395a3e4;
+      padding: 1rem;
+      box-shadow: 0 0.2rem 1.5rem rgba(0, 0, 0, 0.2);
+    }
+
+    /* Adjust the images inside polaroid */
+    .polaroid>img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Adjust the width and transition of polaroids */
+    .item {
+      width: 30%;
+      display: inline-block;
+      margin-top: 0rem;
+    }
+
+    /* Adjust the transform and transition of the polaroids */
+    .item:nth-of-type(4n+1) {
+      transform: scale(0.8, 0.8) rotate(2deg);
+      transition: all 0.35s;
+    }
+
+    .item:nth-of-type(4n+2) {
+      transform: scale(0.8, 0.8) rotate(-2deg);
+      transition: all 0.35s;
+    }
+
+    .item:nth-of-type(4n+3) {
+      transform: scale(0.8, 0.8) rotate(2deg);
+      transition: all 0.35s;
+    }
+
+    /* Adjust the effects when point the mouse to the polaroids */
+    .item:hover {
+      filter: none;
+      transform: scale(1, 1) rotate(0deg);
+      transition: all 0.35s;
+    }
+
+    /* Table for biodata */
+    table,
+    th,
+    td {
+      width: 40%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 35px;
+      border: 2px solid black;
+      border-collapse: separate;
+    }
+
+    .table-responsive {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    th {
+      background-color: #ed909e;
+      color: black;
+      width: 50%;
+      text-align: center;
+    }
+
+    th,
+    td {
+      padding: 10px;
+    }
+
+    td {
+      text-align: justify;
+      background-color: #dda0cb;
+    }
+
+    td:hover {
+      background-color: #f9f7e8;
+    }
+
+    /* Side by side images */
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+    }
+
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .content {
+      padding: 0 15px;
+      display: none;
+      overflow: hidden;
+    }
+
+    p {
+      line-height: 1.5;
+      font-size: 14px;
+      text-indent: 50px;
+      text-align: justify;
+    }
+
+    ul li {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* Adjust the skills container */
+    .container {
+      width: 80%;
+      background-color: #cec8e4;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Adjust the skills texts */
+    .skills {
+      text-align: center;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      color: black;
+      font-weight: bold;
+    }
+
+    /* First skill */
+    .creativity {
+      width: 90%;
+      background-color: #fdcfb3;
+    }
+
+    /* Second skill */
+    .teamwork {
+      width: 85%;
+      background-color: #fdcfb3;
+    }
+
+    /* Third skill */
+    .problemsolving {
+      width: 80%;
+      background-color: #fdcfb3;
+    }
+
+    /* Fourth skill */
+    .communication {
+      width: 75%;
+      background-color: #fdcfb3
+    }
+
+    @media screen and (max-width: 900px) {
+
+      /*Make the polaroid and images look full size in straight line when the screen become smaller*/
+      .item {
+        width: 100%;
+      }
+
+      .column {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<!--Button page-->
+<div class="menu">
+  <img src="" class="logo">
+  <b>
+    <ul>
+      <li><a href="index.html" target="main">Home</a></li>
+      <li><a href="About Me.html" target="main">About Me</a></li>
+      <li><a href="Education Yana's.html" target="main">Education</a></li>
+      <li><a href="Draft Experience.html" target="main">Experiences</a></li>
+      <li><a href="Draft Gallery.html" target="main">Gallery</a></li>
+  </b></ul>
+
+</div>
+
+<section id="Biodata">
+  <title>About Durryana's</title>
+  <div class="biodata">
+
+    <h1 style="text-align:center; text-shadow: 0 0 15px #9e7fbd;"><span style='font-size:40px;'>&#10024;</span>BIODATA
+      OF DURRIYANA AZRA<span style='font-size:40px;'>&#10024;</span></h1>
+
+    <div class="wrapper">
+      <div class="item">
+        <div class="polaroid"><img src="PICTURE_ONE.jpg" title="Picture of Myself 1" alt="Picture of myself">
+        </div>
+      </div>
+      <div class="item">
+        <div class="polaroid"><img src="PICTURE_TWO.jpg" title="Picture of Myself 2" alt="Picture of myself">
+        </div>
+      </div>
+      <div class="item">
+        <div class="polaroid"><img src="PICTURE_FOUR.jpg" title="Picture of Myself 3" alt="Picture of myself">
+        </div>
+      </div>
+    </div>
+
+    <h1 style="text-align:center; text-shadow: 0 0 5px #e6e6b7;"><span style='font-size:40px;'>&diams;</span>HELLO!<span
+        style='font-size:40px;'>&diams;</span></h1>
+
+    <!--------------------------------------------------------------Table with rowspan------------------------------------------------------->
+    <table style="width:70%; margin-left: auto; margin-right: auto; margin-top: 35px">
+      <tr>
+        <th>Name</td>
+        <td>Siti Durriyana Azra Binti Abdul Wahid</td>
+      </tr>
+      <tr>
+        <th>Age</th>
+        <td>20 years old</td>
+      </tr>
+      <tr>
+        <th>Nationality</th>
+        <td>Malaysia</td>
+      </tr>
+      <tr>
+        <th>Religion</th>
+        <td>Islam</td>
+      </tr>
+      <tr>
+        <th>Races</th>
+        <td>Malay</td>
+      </tr>
+      <tr>
+        <th>Date of Birth</th>
+        <td>27 December 2003</td>
+      </tr>
+      <tr>
+        <th>Place of Birth</th>
+        <td>Johor Bahru, Johor</td>
+      </tr>
+      <tr>
+        <th>Home Address</th>
+        <td>45, Jalan Simbang 19, Taman Perling</td>
+      </tr>
+      <tr>
+        <th rowspan="2">Favorite drink</th>
+        <td>Ice Blended Strawberry</td>
+      </tr>
+      <tr>
+        <td>Ice Lemon Tea</td>
+      </tr>
+      <tr>
+        <th rowspan="2">Favorite food</th>
+        <td>Asam Pedas</td>
+      </tr>
+      <tr>
+        <td>Ayam Masak Lemak Cili Api</td>
+      </tr>
+      <tr>
+        <th>Number of family members</th>
+        <td>7 (include me)</td>
+      </tr>
+      <tr>
+        <th>Status inside family</th>
+        <td>I am the 3rd daughter in family</td>
+      </tr>
+      <tr>
+        <th>Number of siblings</th>
+        <td>5</td>
+      </tr>
+      <tr>
+        <th>Education status</th>
+        <td>Diploma in Information Management</td>
+      </tr>
+    </table>
+    <br>
+  </div>
+  </div>
+</section>
+
+</body>
+
+</html>
